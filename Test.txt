@@ -6,6 +6,9 @@ using namespace std;
 
 bool palindromecheck(string str)
 {
+  string :: iterator end = remove(str.begin(), str.end(), ' ');
+  str.resize( distance(str.begin(), end) );
+  
   transform(str.begin(), str.end(), str.begin(), ::toupper); 
   string orgstr = str;
   reverse(str.begin(), str.end());
@@ -26,7 +29,7 @@ int main()
 {
     cout << "Enter word or pharse" << endl;
     string str;
-    cin >> str;
+    getline(cin, str);
     
     if( palindromecheck(str) )
     {
@@ -39,7 +42,6 @@ int main()
 
     return 0;
 }
-
 
 
 SQL
