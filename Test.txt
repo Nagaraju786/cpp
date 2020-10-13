@@ -6,12 +6,7 @@ using namespace std;
 
 bool palindromecheck(string str)
 {
-  if (str.find(' ') != string::npos)
-  { 
-	  string :: iterator end = remove(str.begin(), str.end(), ' ');
-	  str.resize( distance(str.begin(), end) );
-  }
-  
+ 
   transform(str.begin(), str.end(), str.begin(), ::toupper); 
   string orgstr = str;
   reverse(str.begin(), str.end());
@@ -26,6 +21,7 @@ bool palindromecheck(string str)
       
       return false;
   }
+  
 }
 
 int main()
