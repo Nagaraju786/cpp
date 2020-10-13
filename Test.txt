@@ -1,0 +1,66 @@
+#include <iostream>
+#include <algorithm>
+#include <string>
+
+using namespace std;
+
+bool palindromecheck(string str)
+{
+     
+  string orgstr = str;
+  reverse(str.begin(), str.end());
+  
+  if (orgstr == str)
+  {
+       
+       return true;
+  }
+  else
+  {
+      
+      return false;
+  }
+}
+
+int main()
+{
+    string str = "Step on no pets";
+    if( palindromecheck(str) )
+    {
+        cout << "Given string is Palindrome" << endl;
+    }
+    else
+    {
+        cout << "Given string is Not Palindrome" << endl;
+    }
+
+    return 0;
+}
+
+
+
+
+SQL
+-----------
+
+
+2.
+
+select ID, NAME from CUSTOMER order by NAME desc;
+
+select ID, NAME from CUSTOMER group by NAME having count(NAME) > 1 ordey by ID;
+
+
+
+3.
+
+SELECT id, name, marks
+CASE
+    WHEN marks > 90 THEN 'A+'
+    WHEN marks > 70 THEN 'A'
+	WHEN marks > 50 THEN 'B'
+	WHEN marks >= 40 THEN 'C'
+    ELSE 'Fail'
+END AS grade
+FROM students;
+
