@@ -6,8 +6,11 @@ using namespace std;
 
 bool palindromecheck(string str)
 {
-  string :: iterator end = remove(str.begin(), str.end(), ' ');
-  str.resize( distance(str.begin(), end) );
+  if (str.find(' ') != string::npos)
+  { 
+	  string :: iterator end = remove(str.begin(), str.end(), ' ');
+	  str.resize( distance(str.begin(), end) );
+  }
   
   transform(str.begin(), str.end(), str.begin(), ::toupper); 
   string orgstr = str;
